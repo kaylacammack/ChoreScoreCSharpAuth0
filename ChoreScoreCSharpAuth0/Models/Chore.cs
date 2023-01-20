@@ -8,4 +8,5 @@ public class Chore
     public string Day { get; set; }
     public bool Completed { get; set; }
     public string CreatorId { get; set; }
+    public Account Creator { get; set; }
 }

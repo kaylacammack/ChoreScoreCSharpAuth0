@@ -15,5 +15,10 @@ CREATE TABLE
         category VARCHAR(255) NOT NULL,
         day VARCHAR(255) NOT NULL,
         completed BOOLEAN NOT NULL DEFAULT false,
-        creatorId VARCHAR(255) NOT NULL FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
+        creatorId VARCHAR(255) NOT NULL,
+        Foreign Key (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
     ) default charset utf8 COMMENT '';
+
+SELECT chores *, accounts *
+FROM chores
+    JOIN accounts ON accounts.id = chores.creatorId
